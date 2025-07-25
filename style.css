@@ -1,0 +1,59 @@
+body {
+  font-family: 'Arial', sans-serif;
+  direction: rtl;
+  background-color: #fdfdfd;
+  color: #333;
+  padding: 20px;
+  margin: 0;
+}
+
+h1, h2 {
+  color: #2c3e50;
+}
+
+.novel-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.novel-card {
+  display: block;
+  background: #eee;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.novel-card:hover {
+  background: #ddd;
+}
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+}
+
+.chapter-list li {
+  margin: 10px 0;
+}
+
+.chapter-list a {
+  text-decoration: none;
+  color: #2980b9;
+}
+
+.chapter-container {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.next-chapter {
+  display: block;
+  margin-top: 20px;
+  text-align: left;
+  color: #27ae60;
+  text-decoration: none;
+}
