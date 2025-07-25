@@ -1,76 +1,147 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50 - رواية</title>
   <style>
-    body {
-      font-family: Arial;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
-    .header {
-      background-color: #333;
+    
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+      padding-bottom: 80px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .novel-header {
+      background-color: #2c3e50;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
-    .content {
-      padding: 20px;
-      font-size: 18px;
+    
+    .novel-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
     }
-
-    @media (min-width: 768px) {
-      .content {
-        font-size: 24px;
+    
+    .novel-header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    .chapter-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+    
+    .chapter-list li {
+      margin-bottom: 15px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .chapter-list li:hover {
+      transform: translateX(-5px);
+    }
+    
+    .chapter-list a {
+      display: block;
+      padding: 15px 20px;
+      color: #2980b9;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #3498db;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 100;
+    }
+    
+    .back-button:hover {
+      background-color: #2980b9;
+    }
+    
+    /* تصميم للجوال */
+    @media (max-width: 768px) {
+      .novel-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .novel-header p {
+        font-size: 1rem;
+      }
+      
+      .chapter-list a {
+        font-size: 1rem;
+        padding: 12px 15px;
+      }
+      
+      .container {
+        padding: 15px;
+      }
+    }
+    
+    /* تصميم للكمبيوتر */
+    @media (min-width: 1024px) {
+      .novel-header {
+        padding: 40px 20px;
+      }
+      
+      .novel-header h1 {
+        font-size: 3rem;
+      }
+      
+      .novel-header p {
+        font-size: 1.4rem;
       }
     }
   </style>
 </head>
 <body>
-  <meta charset="UTF-8">
-  <title>50</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="novel-header">
-    <h1>50</h1>
-    <p>عندما يكون للعبد اراده قوية</p>
+  <div class="container">
+    <div class="novel-header">
+      <h1>50</h1>
+      <p>عندما يكون للعبد إرادة قوية</p>
+    </div>
+
+    <h2>الفصول:</h2>
+    <ul class="chapter-list">
+      <li><a href="chapter.html?novel=1&chapter=1">الفصل الأول: البرج</a></li>
+      <!-- يمكن إضافة المزيد من الفصول هنا -->
+      <li><a href="#">الفصل الثاني: البداية (قريبًا)</a></li>
+      <li><a href="#">الفصل الثالث: المعاناة (قريبًا)</a></li>
+    </ul>
   </div>
 
-  <h2>الفصول:</h2>
-  <ul class="chapter-list">
-    <li><a href="chapter.html?novel=1&chapter=1">الفصل الأول:البرج</a>
-  </ul>
+  <a href="index.html" class="back-button">🔙 عودة للقائمة</a>
 </body>
-<style> h1 {
-    font-size: 32px;
-    color: #2c3e50;
-  }
-
-  p {
-    font-size: 20px;
-    color: #333;
-  }
-
-  a {
-    font-size: 30px;
-    color: #2980b9;
-    text-decoration: none;
-    text-align: left;
-  }
-</style>
-<a href="index.html" style="
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #3498db;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 16px;">🔙 عودة</a>
 </html>
