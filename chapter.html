@@ -1,151 +1,252 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>الفصل الأولة: البرج</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الفصل الأول: البرج</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
-      direction: rtl;
       font-family: 'Arial', sans-serif;
       background-color: #f8f8f8;
-      padding: 30px;
       color: #333;
-      line-height: 2;
+      line-height: 1.8;
+      padding: 0;
+      margin: 0;
     }
-
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
     .chapter-container {
       background-color: #ffffff;
-      padding: 25px;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      font-size: 25px
+      margin-top: 20px;
+      margin-bottom: 80px;
     }
-
+    
+    .chapter-title {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #2980b9;
+      text-align: center;
+    }
+    
     .dialogue {
-      margin: 15px 0;
-      padding-right: 20px;
-    }
-
-    .narration {
       margin: 20px 0;
+      padding-right: 15px;
+      border-right: 3px solid #3498db;
+      font-size: 1.1rem;
+    }
+    
+    .narration {
+      margin: 25px 0;
       font-style: italic;
       color: #555;
+      font-size: 1.05rem;
     }
-
+    
     .break {
       text-align: center;
-      margin: 20px 0;
+      margin: 30px 0;
       color: #aaa;
     }
-
-    .next-chapter {
-      display: block;
-      margin-top: 30px;
-      text-align: left;
-      text-decoration: none;
-      color: #2980b9;
+    
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
     }
-     h1 {
-    font-size: 32px;
-    color: #2c3e50;
-  }
-
-  p {
-    font-size: 20px;
-    color: #333;
-  }
-
-  a {
-    font-size: 30px;
-    color: #2980b9;
-    text-decoration: none;
-    text-align: left;
-  }
-
+    
+    .nav-button {
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .prev-button {
+      background-color: #f1f1f1;
+      color: #333;
+      margin-right: 10px;
+    }
+    
+    .next-button {
+      background-color: #2980b9;
+      color: white;
+      margin-left: 10px;
+    }
+    
+    .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #3498db;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 100;
+    }
+    
+    .back-button:hover {
+      background-color: #2980b9;
+    }
+    
+    /* تصميم للجوال */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .chapter-container {
+        padding: 20px;
+      }
+      
+      .chapter-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+      
+      .dialogue, .narration {
+        font-size: 1rem;
+      }
+      
+      .nav-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* تصميم للكمبيوتر */
+    @media (min-width: 1024px) {
+      .chapter-title {
+        font-size: 2.2rem;
+      }
+      
+      .dialogue, .narration {
+        font-size: 1.15rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="chapter-container">
-    <h1>الفصل الأول:البرج</h1>
+  <div class="container">
+    <div class="chapter-container">
+      <h1 class="chapter-title">الفصل الأول: البرج</h1>
 
-    <div class="dialogue">صوت خطوات متسارعة</div>
-    
-    <div class="dialogue">"لا، أرجوك لا تفعل هذا... أرجوك لا أستطيع تخيل العالم من دونك!"</div>
-    <div class="dialogue">"لا تتدخل إذن... أنا لا أستطيع أن أعيش في عالم كهذا. دائمًا أُضرب وأُهان من دون سبب!"</div>
+      <div class="dialogue">صوت خطوات متسارعة</div>
+      
+      <div class="dialogue">"لا، أرجوك لا تفعل هذا... أرجوك لا أستطيع تخيل العالم من دونك!"</div>
+      <div class="dialogue">"لا تتدخل إذن... أنا لا أستطيع أن أعيش في عالم كهذا. دائمًا أُضرب وأُهان من دون سبب!"</div>
 
-    <div class="dialogue">...</div>
+      <div class="dialogue">...</div>
+      <div class="dialogue">...</div>
 
-    <div class="dialogue">"صديقي... لا، بل أخي... كل إنسان يواجه مشاكل مثل هذه وسوف..."</div>
-    <div class="dialogue">"لا، أنت لا تفهم! من فعل بي ذلك هم... هم والدي! أنا لا أفهم حتى لما أتكلم معك!"</div>
+      <div class="dialogue">"صديقي... لا، بل أخي... كل إنسان يواجه مشاكل مثل هذه وسوف..."</div>
+      <div class="dialogue">"لا، أنت لا تفهم! من فعل بي ذلك هم... هم والدي! أنا لا أفهم حتى لما أتكلم معك!"</div>
 
-    <div class="dialogue">سقط من أعلى المبنى وبدأ صديقه بالركض وسقط معه من دون أن يفكر</div>
+      <div class="dialogue">سقط من أعلى المبنى وبدأ صديقه بالركض وسقط معه من دون أن يفكر</div>
 
-    <div class="dialogue">......</div>
+      <div class="dialogue">......</div>
+      <div class="dialogue">...</div>
+      <div class="dialogue">...</div>
+      <div class="dialogue">...</div>
 
-    <div class="dialogue">"آخ، أشعر وكأن صخرة ضربت رأسي..."</div>
-    <div class="dialogue">بدأ بالالتفات حوله</div>
+      <div class="dialogue">"آخ، أشعر وكأن صخرة ضربت رأسي..."</div>
+      <div class="dialogue">بدأ بالالتفات حوله</div>
 
-    <div class="dialogue">"أين أنا؟ يبدو أنني في زنزانة لكنها طويلة جدًا..."</div>
-    <div class="dialogue">بدأ بالصراخ من الألم</div>
+      <div class="dialogue">"أين أنا؟ يبدو أنني في زنزانة لكنها طويلة جدًا..."</div>
+      <div class="dialogue">بدأ بالصراخ من الألم</div>
 
-    <div class="dialogue">"من هذا الذي دخل عقلي؟... لماذا يدي مثل يد طفل؟!"</div>
-    <div class="dialogue">بدأ بالتركيز على ماهية هذا المكان</div>
-    <div class="dialogue">"لماذا يوجد الكثير من الجثث؟!"</div>
+      <div class="dialogue">"من هذا الذي دخل عقلي؟... لماذا يدي مثل يد طفل؟!"</div>
+      <div class="dialogue">بدأ بالتركيز على ماهية هذا المكان</div>
+      <div class="dialogue">"لماذا يوجد الكثير من الجثث؟!"</div>
+      <div class="dialogue">...</div>
 
-    <div class="dialogue">"أخي، ساعدني! لا يمكنني الحراك!"</div>
-    <div class="dialogue">بدأ بالبكاء</div>
-    <div class="dialogue">"رأسي... رأسي سينفجر!"</div>
-    <div class="dialogue">"جمي! أين أنت؟!"</div>
+      <div class="dialogue">"أخي، ساعدني! لا يمكنني الحراك!"</div>
+      <div class="dialogue">بدأ بالبكاء</div>
+      <div class="dialogue">"رأسي... رأسي سينفجر!"</div>
+      <div class="dialogue">"جمي! أين أنت؟!"</div>
 
-    <div class="dialogue">"أخي، أنا لا أعلم، فأنا لا أرى شيئًا!"</div>
-    <div class="dialogue">بحث لمدة خمس دقائق</div>
-    <div class="dialogue">"أخي، لقد وجدتك! لقد وضع أحدهم كيسًا على رأسك!"</div>
-    <div class="dialogue">"دريك، لماذا تبدو شاحبًا؟"</div>
-    <div class="dialogue">"أشعر ب..."</div>
-    <div class="dialogue">"تشعر بماذا؟"</div>
-    <div class="dialogue">"أشعر بألم في جميع أنحاء جسدي..."</div>
-    <div class="dialogue">"دريك، لماذا تبدو مختلفًا؟ ألا تذكر بأننا تم شراؤنا من قبل فتاة مجنونة؟ لقد تركتنا لفترة طويلة من دون مأكل أو مشرب."</div>
-    <div class="dialogue">"لقد تذكرت... ربما أني متعب... هيا لنحاول الخروج من هنا."</div>
+      <div class="dialogue">"أخي، أنا لا أعلم، فأنا لا أرى شيئًا!"</div>
+      <div class="dialogue">بحث لمدة خمس دقائق</div>
+      <div class="dialogue">"أخي، لقد وجدتك! لقد وضع أحدهم كيسًا على رأسك!"</div>
+      <div class="dialogue">"دريك، لماذا تبدو شاحبًا؟"</div>
+      <div class="dialogue">"أشعر ب..."</div>
+      <div class="dialogue">"تشعر بماذا؟"</div>
+      <div class="dialogue">"أشعر بألم في جميع أنحاء جسدي..."</div>
+      <div class="dialogue">"دريك، لماذا تبدو مختلفًا؟ ألا تذكر بأننا تم شراؤنا من قبل فتاة مجنونة؟ لقد تركتنا لفترة طويلة من دون مأكل أو مشرب."</div>
+      <div class="dialogue">"لقد تذكرت... ربما أني متعب... هيا لنحاول الخروج من هنا."</div>
 
-    <div class="dialogue">يبدو أن ما رأيته قبل أن أضرب في الأرض كان حقيقيًا. يجب ألا يعلم هذا الطفل بأن أخاه قد مات...</div>
+      <div class="dialogue">يبدو أن ما رأيته قبل أن أضرب في الأرض كان حقيقيًا. يجب ألا يعلم هذا الطفل بأن أخاه قد مات...</div>
 
-    <div class="dialogue">"جمي"</div>
-    <div class="dialogue">"ماذا؟"</div>
-    <div class="dialogue">"فل تذهب إلى الطاولة التي على اليسار، اجمع كل شيء."</div>
-    <div class="dialogue">"حسنًا..."</div>
+      <div class="dialogue">"جمي"</div>
+      <div class="dialogue">"ماذا؟"</div>
+      <div class="dialogue">"فل تذهب إلى الطاولة التي على اليسار، اجمع كل شيء."</div>
+      <div class="dialogue">"حسنًا..."</div>
+       <div class="dialogue">...</div>
 
-    <div class="dialogue">"وأنت ماذا ستفعل؟"</div>
-    <div class="dialogue">"أنا سوف أستكشف المكان، لعلي أجد مخرجًا."</div>
+      <div class="dialogue">"وأنت ماذا ستفعل؟"</div>
+      <div class="dialogue">"أنا سوف أستكشف المكان، لعلي أجد مخرجًا."</div>
 
-    <div class="dialogue">لا يبدو كزنزانة، بل برج... ماذا حدث هنا؟ المكان مليء بالجثث! هل حدثت مجزرة؟ لماذا لا أذكر شيئًا من هذا الجسد؟ مع أني متأكد أن سبب الألم هو ذكريات هذا الجسد. الشيء الوحيد الذي أذكره هو أن والدي هذين الطفلين قد قُتلا عندما كان جمي بعمر الثالثة ودريك بعمر السابعة.</div>
+      <div class="dialogue">لا يبدو كزنزانة، بل برج... ماذا حدث هنا؟ المكان مليء بالجثث! هل حدثت مجزرة؟ لماذا لا أذكر شيئًا من هذا الجسد؟ مع أني متأكد أن سبب الألم هو ذكريات هذا الجسد. الشيء الوحيد الذي أذكره هو أن والدي هذين الطفلين قد قُتلا عندما كان جمي بعمر الثالثة ودريك بعمر السابعة.</div>
 
-    <div class="dialogue">"أخي، لقد وجدت سلاحًا!"</div>
-    <div class="dialogue">"حسنًا، انتظر عندك."</div>
-    <div class="dialogue">"لقد وجدت ساطور! هل تتوقع أن نستطيع كسر الباب؟"</div>
-    <div class="dialogue">"فلنجرب."</div>
-    <div class="dialogue">"لقد كانت فكرة سيئة... فلنذهب إلى الأعلى."</div>
+      <div class="dialogue">"أخي، لقد وجدت سلاحًا!"</div>
+      <div class="dialogue">"حسنًا، انتظر عندك."</div>
+      <div class="dialogue">"لقد وجدت ساطور! هل تتوقع أن نستطيع كسر الباب؟"</div>
+      <div class="dialogue">"فلنجرب."</div>
+      <div class="dialogue">"لقد كانت فكرة سيئة... فلنذهب إلى الأعلى."</div>
 
-    <div class="dialogue">عندما وصلا إلى أعلى طابق من البرج، وجدا بابًا مغلقًا لكن استطاعا كسره ووجدا سلّمًا. وعندما وصلا إلى أعلى ارتفاع، انصدما من المكان.</div>
+      <div class="dialogue">عندما وصلا إلى أعلى طابق من البرج، وجدا بابًا مغلقًا لكن استطاعا كسره ووجدا سلّمًا. وعندما وصلا إلى أعلى ارتفاع، انصدما من المكان.</div>
 
-    <div class="dialogue">"أخي! نحن في برج أعلى جبل!!"</div>
-    <div class="dialogue">"جمي، فل تهدأ. من المؤكد أننا نستطيع الخروج من البرج."</div>
+      <div class="dialogue">"أخي! نحن في برج أعلى جبل!!"</div>
+      <div class="dialogue">"جمي، فل تهدأ. من المؤكد أننا نستطيع الخروج من البرج."</div>
 
-    <div class="dialogue">وبدآ بالبحث عن مخرج، ووجدا صخرة كبيرة من بين الجثث وبدآ بكسر الباب.</div>
+      <div class="dialogue">وبدآ بالبحث عن مخرج، ووجدا صخرة كبيرة من بين الجثث وبدآ بكسر الباب.</div>
 
-    <div class="dialogue">"أخيرًا، لقد خرجنا من هذا الجحيم!"</div>
-    <div class="dialogue">"أخي، تبقى القليل ويحل الظلام..."</div>
-    <div class="dialogue">"لا بأس، يجب أن نبحث عن أقرب قرية."</div>
-    <div class="dialogue">"أخي، لماذا تبدو غبيًا؟ نحن عبيد! هل نسيت؟"</div>
-    <div class="dialogue">"جمي، فل نهدأ، فأنا مضطرب قليلًا."</div>
-    <div class="dialogue">"دريك، يوجد نار هناك!"</div>
-    <div class="dialogue">"هيا لنذهب، ولكن يجب أن نبقى حذرين."</div>
+      <div class="dialogue">"أخيرًا، لقد خرجنا من هذا الجحيم!"</div>
+      <div class="dialogue">"أخي، تبقى القليل ويحل الظلام..."</div>
+      <div class="dialogue">"لا بأس، يجب أن نبحث عن أقرب قرية."</div>
+      <div class="dialogue">"أخي، لماذا تبدو غبيًا؟ نحن عبيد! هل نسيت؟"</div>
+      <div class="dialogue">"جمي، فل نهدأ، فأنا مضطرب قليلًا."</div>
+      <div class="dialogue">"دريك، يوجد نار هناك!"</div>
+      <div class="dialogue">"هيا لنذهب، ولكن يجب أن نبقى حذرين."</div>
 
-    <div class="dialogue">وعندما اقتربا من مصدر النار، بدآ بالتجسس لكي يعرفا من هم، ولكن جمي سقط بسبب خصن. وفجأة صرخ أحد الأشخاص:</div>
-    <div class="dialogue">"أطفال! يوجد أطفال!!"</div>
+      <div class="dialogue">وعندما اقتربا من مصدر النار، بدآ بالتجسس لكي يعرفا من هم، ولكن جمي سقط بسبب خصن. وفجأة صرخ أحد الأشخاص:</div>
+      <div class="dialogue">"أطفال! يوجد أطفال!!"</div>
 
-    <a href="chapter.html?novel=1&chapter=2" class="next-chapter">⟶ الفصل التالي</a>
-    <a href="novel.html">قبل</a>
+      <div class="navigation">
+        <a href="novel.html" class="nav-button prev-button">⟵ العودة للرواية</a>
+        <a href="chapter.html?novel=1&chapter=2" class="nav-button next-button">الفصل التالي ⟶</a>
+      </div>
+    </div>
   </div>
+
 </body>
 </html>
