@@ -27,7 +27,7 @@
       --chapter-title-color: #bb86fc;
       --border-color: #bb86fc;
       --dialogue-border: #03dac6;
-      --narration-color: #a0a0a0;
+      --narration-color: #fffcfc;
       --nav-button-bg: #333333;
       --next-button-bg: #bb86fc;
       --back-button-bg: #03dac6;
@@ -76,17 +76,18 @@
     .dialogue, .narration {
       margin: 20px 0;
       padding-right: 15px;
-      font-size: 1.1rem;
       line-height: 1.8;
     }
     
     .dialogue {
       border-right: 3px solid var(--dialogue-border);
+      font-size: 1.1rem !important;
     }
     
     .narration {
       font-style: italic;
       color: var(--narration-color);
+      font-size: 1rem;
     }
     
     .break {
@@ -185,8 +186,12 @@
         margin-bottom: 20px;
       }
       
-      .dialogue, .narration {
-        font-size: 1rem;
+      .dialogue {
+        font-size: 1rem !important;
+      }
+      
+      .narration {
+        font-size: 0.9rem;
       }
       
       .nav-button {
@@ -212,34 +217,34 @@
   <div class="container">
     <div class="chapter-container">
       <h1 class="chapter-title">البرج</h1>
-      <div class="dialogue">صوت خطوات متسارة</div>
+      <div class="narration">صوت خطوات متسارعة</div>
 
       <div class="dialogue">"لا، أرجوك! لا تفعل هذا! لا أستطيع أن أتخيل العالم دونك!"</div>
       <div class="dialogue">"لا تتخيل إذن... أنا لا أستطيع أن أعيش في عالمٍ كهذا، دائمًا أُضرب وأُهان دون سبب!"</div>
 
-      <div class="dialogue">...</div>
-      <div class="dialogue">...</div>
+      <div class="narration">...</div>
+      <div class="narration">...</div>
 
       <div class="dialogue">"صديقي... لا، بل أخي! كل إنسان يواجه مشاكل مثل هذه، وسوف—"</div>
       <div class="dialogue">"لا، أنت لا تفهم! من فعل بي ذلك هم... هم والديّ!... أنا لا أفهم حتى لماذا أتحدث معك!"</div>
 
       <div class="narration">سقط من أعلى المبنى، وبدأ صديقه بالركض خلفه، ثم قفز دون تفكير...</div>
 
-      <div class="dialogue">......</div>
-      <div class="dialogue">...</div>
-      <div class="dialogue">...</div>
-      <div class="dialogue">...</div>
+      <div class="narration">......</div>
+      <div class="narration">...</div>
+      <div class="narration">...</div>
+      <div class="narration">...</div>
 
       <div class="dialogue">"آه! أشعر وكأن صخرةً ضربت رأسي!"</div>
       <div class="narration">بدأ بالالتفات حوله، متحيرًا.</div>
 
       <div class="dialogue">"أين أنا؟ يبدو أنني في زنزانة، لكنها طويلة جدًا!"</div>
       <div class="narration">صرخ من الألم، ثم لاحظ شيئًا غريبًا.</div>
+      <div class="dialogue">"!لماذا تشبه يدي يد طفل؟"</div>
 
-      <div class="dialogue">"من هذا الذي يتسلل إلى عقلي؟!... لماذا يدي تشبه يد طفل؟!"</div>
       <div class="narration">حاول التركيز لفهم هذا المكان المرعب.</div>
       <div class="dialogue">"لماذا كل هذه الجثث حولي؟!"</div>
-      <div class="dialogue">...</div>
+      <div class="narration">...</div>
 
       <div class="dialogue">"أخي... ساعدني! لا أستطيع الحراك!"</div>
       <div class="narration">بدأ بالبكاء.</div>
@@ -249,67 +254,47 @@
       <div class="dialogue">"أخي، لا أعلم، فأنا لا أرى شيئًا!"</div>
       <div class="narration">بحث لمدة من الزمن.</div>
       <div class="dialogue">"أخي! وجدتك! لقد وضع أحدهم كِساءً على رأسك!"</div>
-      <div class="narration">"وبينما هما يستريحان، أبصر جمي تحوُّلاً في طلعة دريك واختلافًا في سلوكه"</div>
-      <div class="dialogue">"درك، لماذا تبدو شاحبًا هكذا؟"</div>
+      <div class="dialogue">"دريك، لماذا تبدو شاحبًا هكذا؟"</div>
       <div class="dialogue">"أشعر ب—"</div>
       <div class="dialogue">"بماذا تشعر؟"</div>
       <div class="dialogue">"أشعر بألمٍ في كل جسدي..."</div>
-      <div class="dialogue">"درك، لماذا تتصرف بغرابة؟ ألا تذكر أن فتاةً مجنونة اشترتنا؟... لقد تركتنا دون طعامٍ أو شرابٍ لفترة طويلة!"</div>
-      <div class="dialogue">"تذكرتُ... ربما أنا متعبٌ فقط. هيا، لنحاول الخروج من هنا."</div>
 
-      <div class="narration">يبدو أن ما رأيته قبل السقوط حقيقي! يجب ألّا يعلم هذا الطفل أن أخاه قد مات... فأنا خائف بأني أنا من قتله.</div>
 
       <div class="dialogue">"جمي!"</div>
       <div class="dialogue">"ماذا؟"</div>
       <div class="dialogue">"اذهب إلى الطاولة على اليسار، واحمل كل ما تجده!"</div>
       <div class="dialogue">"حسنًا..."</div>
-      <div class="dialogue">...</div>
+      <div class="narration">...</div>
 
       <div class="dialogue">"وأنت، ماذا ستفعل؟"</div>
       <div class="dialogue">"سأستكشف المكان، لعلني أجد مخرجًا."</div>
 
-      <div class="narration">المكان ليس زنزانة، بل برجٌ مهجور! الجثث في كل مكان... هل حدثت مجزرة هنا؟ لماذا لا أتذكر أي شيء من ماضي هذا الجسد؟ الألم الذي أشعر به ناتج عن ذكريات هذا الجسد الغريب. الشيء الوحيد الذي أتذكره هو أن والدا هذين الطفلين قُتلا عندما كان "جمي" في الثالثة من عمره، و"دريك" في السابعة.</div>
-
+      <div class="dialogue">المكان ليس زنزانة، بل برجٌ مهجور! الجثث في كل مكان... هل حدثت مجزرة هنا؟ و لماذا لا أتذكر أي شيء؟
       <div class="dialogue">"أخي! وجدت سلاحًا!"</div>
       <div class="dialogue">"جيد! انتظر هناك."</div>
-      <div class="dialogue">"لدي ساطور! ولكنه صدئ. هل تعتقد أننا نستطيع كسر الباب؟"</div>
+      <div class="dialogue">"لدي فأس! ولكنه صدئ. هل تعتقد أننا نستطيع كسر الباب؟"</div>
       <div class="dialogue">"لنجرب..."</div>
       <div class="narration">لقد حاولا كثيراً ولكن لم يحدث أي شيء.</div>
       <div class="dialogue">"كانت فكرة سيئة! لنصعد إلى الأعلى!"</div>
 
-      <div class="narration">عندما وصلا إلى الطابق الأخير، وجدا بابًا مغلقًا، لكنهما تمكنا من كسره، ليجدوا سلمًا يؤدي إلى الأعلى. وعندما وصلا إلى القمة، صُدما بالمنظر.</div>
-      <div class="narration">كان المنظر مهيبًا... كان كلُّ شيءٍ مغطًّى بالثَّلج، كأنَّها في عصرٍ جليديٍّ</div>
+      <div class="narration">عندما وصلا إلى الطابق الأخير، وجدا بابًا مغلقًا، لكنهما تمكنا من كسره، ليجدوا سلمًا يؤدي إلى الأعلى. وعندما وصلا إلى القمة، صُدما بالمنظر
+      كان المنظر مهيبًا... كان كلُّ شيءٍ مغطًّى بالثَّلج، كأنَّهما في عصرٍ جليديٍّ.</div>
 
       <div class="dialogue">"أخي! نحن في برجٍ فوق جبل ثلجي!"</div>
       <div class="dialogue">"جمي هل نحن في فصل الشتاء؟"</div>
-      <div class="dialogue">"دريك... لماذا تُخيفني بأسئلتك؟ أنا متأكدٌ أنك لستَ أنت!"</div>
-      <div class="dialogue">"توقف جمي"</div>
-
-      <div class="narration">فجأةً وهو يحدّق في أخيه بعينين واسعتين مليئتين بالدموع. الرياح تعصف حولهما على قمة الجبل، "دريك" الشاحب، مما يجعل ملامحه تبدو غريبةً... مُرعبة.</div>
-
-      <div class="dialogue">"ما الذي تتحدث عنه؟ أنا أخوك!"</div>
-      <div class="dialogue">"أنت لا تكذب علي"</div>
-      <div class="narration">قال دريك محاولاً تهدئته، لكن صوته بدا أجشّاً، كما لو كان هناك شخص آخر يتحدث من داخله.</div>
-      <div class="dialogue">"لا! أنت لا تفهم شيئاً!"</div>
-
-      <div class="narration">ارتجف جمي وهو يتراجع إلى الخلف، وكأنه يواجه وحشاً مقنعاً بأخيه.</div>
-      <div class="dialogue">"جمي، أنت لا تفهم—"</div>
-      <div class="dialogue">"توقف! ألا تذكر عندما ضربني ذلك الشخص قبل موته... ومنذ تلك الضربة، نسيتُ كل شيءٍ تقريباً."</div>
-
-      <div class="narration">انفجر "جمي" بالبكاء، بينما أخذت ذكريات تعود إليه كالسيول حينها دخلت عقله ذكريات شخص غريب.</div>
-
-      <div class="dialogue">"حسناً أنا أصدقك"</div>
-      <div class="narration">يجب أن أحذر منه....ولكن الذكريات التي دخلت عقلي مشوشة.</div>
-
+      <div class="dialogue">"ربما... دريك، لماذا نحن هنا من الأساس؟"</div>
+      <div class="dialogue">"لا اعلم"</div>
       <div class="narration">بدأ البحث عن مخرج، حتى وجدا صخرةً كبيرة بين الجثث، واستخدماها لتحطيم الباب.</div>
 
       <div class="dialogue">"أخيراً! حررنا أنفسنا من هذا الجحيم!"</div>
       <div class="dialogue">"أخي، الوقت يقترب من الغروب..."</div>
       <div class="dialogue">"لا بأس، يجب أن نجد أقرب قرية."</div>
-      <div class="dialogue">"قرية؟ دريك، هل نسيت أننا عبيد؟!"</div>
-      <div class="dialogue">"حسنًا... فكيف لنا أن ننجو إن لم نعثر على ملجأ؟"</div>
-      <div class="dialogue">"حسنًا... فكيف لنا أن ننجو إن لم نعثر على ملجأ؟"</div>
-
+      <div class="dialogue">"دريك أنا خائف"</div>
+      <div class="dialogue">"لماذا؟"</div>
+      <div class="dialogue">"خائف من أشياء كثيرة، مثل بأن ليس لدينا اي طعام وعدم تذكري لأي شيء"</div>
+      <div class="dialogue">"لا تقلق فأخاك الأكبر سوف يتدبر الأمر"</div>
+      <div class="narration">بدأ الاثنان بالمشي حتى حلَّ الظلام، حتى رأيا بصيصًا من الأمل.</div>
+     
       <div class="dialogue">"دريك! هناك نارٌ مشتعلة!"</div>
       <div class="dialogue">"هيا نتحرّك، لكن علينا أن نكون حذرين."</div>
 
