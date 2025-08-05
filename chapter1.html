@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الفصل الثاني: المعاناة</title>
+  <style>
+    :root {
+      --bg-color: #f8f8f8;
+      --text-color: #333;
+      --container-bg: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --chapter-title-color: #2c3e50;
+      --border-color: #2980b9;
+      --dialogue-border: #3498db;
+      --narration-color: #555;
+      --nav-button-bg: #f1f1f1;
+      --next-button-bg: #2980b9;
+      --back-button-bg: #3498db;
+    }
+
+    .dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --container-bg: #1e1e1e;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --chapter-title-color: #bb86fc;
+      --border-color: #bb86fc;
+      --dialogue-border: #03dac6;
+      --narration-color: #fffcfc;
+      --nav-button-bg: #333333;
+      --next-button-bg: #bb86fc;
+      --back-button-bg: #03dac6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.8;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .chapter-container {
+      background-color: var(--container-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px var(--shadow-color);
+      margin-top: 20px;
+      margin-bottom: 80px;
+    }
+    
+    .chapter-title {
+      font-size: 1.8rem;
+      color: var(--chapter-title-color);
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--border-color);
+      text-align: center;
+    }
+    
+    .dialogue, .narration {
+      margin: 20px 0;
+      padding-right: 15px;
+      line-height: 1.8;
+    }
+    
+    .dialogue {
+      border-right: 3px solid var(--dialogue-border);
+      font-size: 1.1rem !important;
+    }
+    
+    .narration {
+      font-style: italic;
+      color: var(--narration-color);
+      font-size: 1rem;
+    }
+    
+    .break {
+      text-align: center;
+      margin: 30px 0;
+      color: #aaa;
+    }
+    
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    
+    .nav-button {
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .prev-button {
+      background-color: var(--nav-button-bg);
+      color: var(--text-color);
+      margin-right: 10px;
+    }
+    
+    .next-button {
+      background-color: var(--next-button-bg);
+      color: white;
+      margin-left: 10px;
+    }
+    
+    .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: var(--back-button-bg);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 100;
+    }
+    
+    .back-button:hover {
+      background-color: var(--next-button-bg);
+    }
+
+    /* زر الوضع الداكن */
+    .dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--container-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dark-mode-toggle i {
+      margin-right: 5px;
+    }
+    
+    /* تصميم للجوال */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .chapter-container {
+        padding: 20px;
+      }
+      
+      .chapter-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .dialogue {
+        font-size: 1rem !important;
+      }
+      
+      .narration {
+        font-size: 0.9rem;
+      }
+      
+      .nav-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+
+      .dark-mode-toggle {
+        top: 10px;
+        left: 10px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <button class="dark-mode-toggle" id="darkModeToggle">
+    <i class="fas fa-moon"></i> الوضع الداكن
+  </button>
+
+  <div class="container">
+    <div class="chapter-container">
+      <h1 class="chapter-title">المعاناة</h1>
+      
+      <div class="narration">عندما سمعا صوت الرجل، أسرعا للفرار، وكان الذي يسمعانه أصوات رجال خلفهم.</div>
+      
+      <div class="dialogue">"أخي، ساعدني! لا أستطيع الركض أكثر من هذا."</div>
+      <div class="dialogue">"اصبر! يجب علينا الهرب منهم."</div>
+
+      <div class="narration">وبينما كان ينهي كلامه، أصابه أحد الرجال بسهم في قدمه. وعندما رأى "جمي" هذا المشهد، تجمد من الخوف، وراح يردد:</div>
+      <div class="dialogue">"لا أريد تكرار هذا! لا أريد أن يحدث هذا مرة أخرى! يا أمي، يا أبي، أنقذانا!"</div>
+      <div class="narration">ثم انفجر في البكاء حتى أمسك بهم الرجال.</div>
+
+      <div class="dialogue">"رائع... إنهم حقًا جميلون! سوف يشتريهم النبلاء بثمنٍ عالٍ."</div>
+
+      <div class="narration">بعد أن ربطوهم بالسلاسل، وضعوهم مع بقية العبيد، وأخذوهم في طريقهم حتى حلول الظلام. لكنهم فُصلوا عن بعضهم البعض.</div>
+      
+      <div class="narration">وضعوا دريك في عربة العبيد المصابين، وبدأوا بالسير حتى حلول الظلام، ثم وضعوا العبيد جميعهم في المكان نفسه حتى الصباح.</div>
+
+      <div class="dialogue">"جمي، هل أنت بخير؟ هل آذاك أحد؟"</div>
+      <div class="dialogue">"نعم... حاول أحدهم التحرش بي."</div>
+      <div class="dialogue">"لعنة عليهم! لو كنت أملك بعض القوة، لسحقتهم!"</div>
+      <div class="dialogue">"حتى لو امتلكت القوة، ففي النهاية، سيواجه الجميع المصير نفسه."</div>
+      <div class="dialogue">"كيف أواجه المصير نفسه؟ كل النبلاء والملوك يمتلكون القوة، فكيف يكون مصيري مثلهم؟"</div>
+      <div class="dialogue">"كلهم مستعبدون، لكن بطرق مختلفة."</div>
+      <div class="dialogue">"اسكتوا أيها اللئام!"</div>
+
+      <div class="narration">...</div>
+
+      <div class="narration">في تلك اللحظة، بدأ دريك يتأمل كلام العبد: "كيف يكونون مستعبدين وهم يمتلكون القوة؟" حتى غلبه التعب ونام.</div>
+
+      <div class="narration">...</div>
+
+      <div class="dialogue">"استيقظوا! حان وقت الرحيل."</div>
+      <div class="narration">استيقظ الأخوان، وعندما وُضع كل عبد في مكانه، خطر لجمي في باله:</div>
+      <div class="dialogue">"هل لو ضربت ذلك المتحرش، سيتوقف عن أذيتي؟"</div>
+
+      <div class="navigation">
+        <a href="novel.html" class="nav-button prev-button">⟵ العودة للرواية</a>
+        <a href="chapter2.html" class="nav-button next-button">الفصل التالي ⟶</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // تبديل الوضع الداكن
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    
+    // تحقق من تفضيلات المستخدم للنظام
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // تحقق من الإعدادات المحفوظة
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+      body.classList.add('dark-mode');
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> الوضع الفاتح';
+    }
+    
+    darkModeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> الوضع الفاتح';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i> الوضع الداكن';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
