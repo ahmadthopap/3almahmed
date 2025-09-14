@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ظلال الوهم</title>
+  <style>
+    :root {
+      --bg-color: #f8f8f8;
+      --text-color: #333;
+      --container-bg: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --chapter-title-color: #2c3e50;
+      --border-color: #2980b9;
+      --dialogue-border: #3498db;
+      --narration-color: #555;
+      --nav-button-bg: #f1f1f1;
+      --next-button-bg: #2980b9;
+      --back-button-bg: #3498db;
+    }
+
+    .dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --container-bg: #1e1e1e;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --chapter-title-color: #bb86fc;
+      --border-color: #bb86fc;
+      --dialogue-border: #03dac6;
+      --narration-color: #fffcfc;
+      --nav-button-bg: #333333;
+      --next-button-bg: #bb86fc;
+      --back-button-bg: #03dac6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.8;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .chapter-container {
+      background-color: var(--container-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px var(--shadow-color);
+      margin-top: 20px;
+      margin-bottom: 80px;
+    }
+    
+    .chapter-title {
+      font-size: 1.8rem;
+      color: var(--chapter-title-color);
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--border-color);
+      text-align: center;
+    }
+    
+    .dialogue, .narration {
+      margin: 20px 0;
+      padding-right: 15px;
+      line-height: 1.8;
+    }
+    
+    .dialogue {
+      border-right: 3px solid var(--dialogue-border);
+      font-size: 1.1rem !important;
+    }
+    
+    .narration {
+      font-style: italic;
+      color: var(--narration-color);
+      font-size: 1rem;
+    }
+    
+    .break {
+      text-align: center;
+      margin: 30px 0;
+      color: #aaa;
+    }
+    
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    
+    .nav-button {
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .prev-button {
+      background-color: var(--nav-button-bg);
+      color: var(--text-color);
+      margin-right: 10px;
+    }
+    
+    .next-button {
+      background-color: var(--next-button-bg);
+      color: white;
+      margin-left: 10px;
+    }
+    
+    .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: var(--back-button-bg);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 100;
+    }
+    
+    .back-button:hover {
+      background-color: var(--next-button-bg);
+    }
+
+    /* زر الوضع الداكن */
+    .dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--container-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dark-mode-toggle i {
+      margin-right: 5px;
+    }
+    
+    /* تصميم للجوال */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .chapter-container {
+        padding: 20px;
+      }
+      
+      .chapter-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .dialogue {
+        font-size: 1rem !important;
+      }
+      
+      .narration {
+        font-size: 0.9rem;
+      }
+      
+      .nav-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+
+      .dark-mode-toggle {
+        top: 10px;
+        left: 10px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <button class="dark-mode-toggle" id="darkModeToggle">
+    <i class="fas fa-moon"></i> الوضع الداكن
+  </button>
+
+  <div class="container">
+    <div class="chapter-container">
+      <h1 class="chapter-title">ظلال الوهم</h1>
+      <div class="narration">الفصل الأول: البداية المبكرة</div>
+      <div class="dialogue">وُلد محمد في بيئة مليئة بالتناقضات، حيث كان منذ طفولته يشعر بأشياء غريبة تتجاوز قدرته على الفهم. منذ سن السادسة، بدأت أولى ملامح الغموض تلوح في حياته. لم يكن الأمر شديدًا في البداية؛ كان ما زال قادرًا على اللعب والضحك مع الأطفال الآخرين، لكنه كان يشعر بحرارة غريبة تتصاعد من جسده. حرارة لا تحرق القماش، لكنها تُلاحَظ بوضوح، وكأن جسده يخزن سرًا لا يقدر على البوح به.</div>
+      <div class="narration">الفصل الثاني: أولى الرؤى</div>
+      <div class="dialogue">بدأت الرؤى والهلوسات تظهر في حياته في سن العاشرة. في البداية، لم يميز بينها وبين الواقع، لكن مع مرور الوقت، أصبح يرى ظلالًا تتحرك حوله، أجسادًا طويلة سوداء بلا ملامح، عيونًا حمراء متقدة، وأصواتًا تأتي من لا مكان. كانت هذه الكائنات تقف بعيدًا، ترمقه بصمت، أو تقترب لتبث في قلبه خوفًا عابرًا، لكنه مع ذلك، كان يشعر براحة غريبة في حضورها، وكأن وجودها جزء من حياته.</div>
+      <div class="narration">الفصل الثالث: عالم الأطفال والأصوات</div>
+      <div class="dialogue">من أكثر ما أرهقه كان أصوات الأطفال. ضحكات، بكاء، صرخات، كانوا يدورون حوله كأشباح لا تهدأ. في بعض المرات، كان يراهم وهم يمسكون به مع نساء غريبات يسحبونه بقوة، وفي أحيان أخرى يظهرون أمامه يلعبون كأنهم موجودون حقيقة. كان يسمعهم حتى وهو يقود السيارة، ضحكاتهم تتردد في أذنيه وتطارده بلا رحمة.</div>
+      <div class="narration">الفصل الرابع: الملاحق</div>
+      <div class="dialogue">أحد أكثر الكائنات التي بثت في نفسه الرعب هو "الملاحق". ظل أسود شديد السواد، يكرر حركات محمد بتأخير بضع ثوانٍ. كان كأنه نسخة مشوهة، تنتظر حتى ينهي محمد فعله لتعيده أمامه بسخرية صامتة. وبعدها، يركض المخلوق بسرعة هائلة، حتى إن محمد نفسه كان يهرب منه لا شعوريًا، يشعر بأنفاسه خلفه، وكأنه يطارده في عالم لا يعرف حدودًا.</div>
+      <div class="narration">الفصل الخامس: الوحدة والعمل</div>
+      <div class="dialogue">مع مرور الوقت، أصبح محمد وحيدًا بين أهله. كان الإخوة يلعبون ويأكلون، بينما هو الوحيد الذي يعمل ويُنهك نفسه من أجلهم. التعب تراكم، الجسد ضعف، النوم لم يعد يمنحه راحة. حتى حين ينام ثماني ساعات أو أكثر، كان يستيقظ وكأنه لم ينم أبدًا. أحيانًا يتقلب نومه إلى ثلاث ساعات متقطعة تزيده إنهاكًا. المزاج مضطرب، العصبية سريعة، ثم يندم أشد الندم على أي انفعال. كان يمثل أمام أهله القوة حتى لا يصفوه بالدلال، بينما داخله ينكسر بصمت.</div>
+      <div class="narration">الفصل السادس: الألم الجسدي والنفسي</div>
+      <div class="dialogue">جسده لم يكن يسلم. ضيق التنفس بسبب الربو، ضغط دم ارتفع يومًا حتى بلغ 180، رجفات متكررة، صداع مزمن، ودوخة ترافقه. أحيانًا يفقد الشهية، وأحيانًا يجد الطعام مقززًا لا يُحتمل طعمه. في أوقات نادرة، يستمتع بلقمة خفيفة، لكن الغالب كان أن يكره الأكل رغم جوعه. كان يشعر بأن جسده ينهار ببطء، بينما روحه تغرق في صراع داخلي لا ينتهي.</div>
+      <div class="narration">الفصل السابع: محاولة الرحيل</div>
+      <div class="dialogue">في لحظة من اليأس، فكر محمد في الرحيل عن هذه الحياة. لم تكن فكرة متكررة، لكنه جرب محاولة واحدة، مستخدمًا أداة حادة. لم يكتمل الفعل، لكنه بقي أثره في ذاكرته، كجرح في النفس قبل الجسد. لم يكن يريد أن يموت منتحرًا، بل كان يتمنى موتًا طبيعيًا، لكنه اعترف لنفسه أن فكرة الانتحار زارته، وأنه لولا بعض اللحظات من التعلق بالحياة، ربما لم يكن بين الأحياء الآن.</div>
+      <div class="narration">الفصل الثامن: صراع الهوية</div>
+      <div class="dialogue">أحيانًا كان يشعر بطاقة مفرطة، يتحدث مع أصدقائه بحماس مبالغ فيه، وأحيانًا يغرق في صمت ثقيل وضيق لا يعرف سببه. كان بين النقيضين، لا يثبت على حال، وكأنه يعيش داخل دائرة مغلقة. ومع كل ذلك، ظل يحاول أن يبدو طبيعيًا، يكتب الروايات، يربي الدجاج، يبحث عن معنى لحياته وسط فوضى الوهم.</div>
+      <div class="narration">الفصل التاسع: البيت والظلال</div>
+      <div class="dialogue">كلما دخل بيته، شعر بألم في بطنه يشتد، وإذا خرج يختفي الألم ويحل مكانه شعور بالمراقبة. كان البيت نفسه مظلمًا كئيبًا في نظره: طرق مكسرة، أشجار حزينة، هدوء خانق، وجيران يتربصون بالحسد والمشاكل. لم يكن الأمر مجرد مكان للسكن، بل صار رمزًا للسجن النفسي الذي يعيش فيه.</div>
+      <div class="narration">الفصل العاشر: النهاية المعلقة</div>
+      <div class="dialogue">حياة محمد لم تكن سوى فصول من الغموض، الهلوسات التي تطارده، الأحاسيس المتناقضة، الوحدة، الانكسار، والآمال الممزقة. كان يعيش بين الحقيقة والوهم، لا يعرف أين تنتهي إحداهما وتبدأ الأخرى. لكنه ظل متمسكًا بخيط رفيع يربطه بالحياة: أصدقاؤه الذين يفضفض لهم، وإيمانه بأن موته لا بد أن يكون بيد الله وحده، لا بيده.</div>
+
+
+
+
+
+
+
+
+
+
+      <div class="navigation">
+        <a href="index.html" class="nav-button prev-button">⟵ العودة للرواية</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // تبديل الوضع الداكن
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    
+    // تحقق من تفضيلات المستخدم للنظام
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // تحقق من الإعدادات المحفوظة
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+      body.classList.add('dark-mode');
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> الوضع الفاتح';
+    }
+    
+    darkModeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> الوضع الفاتح';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i> الوضع الداكن';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
